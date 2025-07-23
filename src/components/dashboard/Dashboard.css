@@ -1,0 +1,100 @@
+/* src/components/dashboard/Dashboard.css */
+
+.dashboard-container {
+    padding: 24px;
+    background-color: #f8f9fa;
+}
+
+.dashboard-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #343a40;
+}
+
+/* Stat Kartalari */
+.stat-card-new {
+    border: none;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.stat-card-new:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card-body {
+    padding: 24px;
+    position: relative;
+    z-index: 2;
+}
+
+.stat-value {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.stat-title {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+.stat-icon-bg {
+    position: absolute;
+    right: -20px;
+    bottom: -20px;
+    font-size: 80px;
+    opacity: 0.2;
+    transform: rotate(-15deg);
+    z-index: 1;
+}
+
+.card-bg-success { background: linear-gradient(45deg, #28a745, #218838); }
+.card-bg-warning { background: linear-gradient(45deg, #ffc107, #e0a800); color: #212529 !important; }
+.card-bg-info    { background: linear-gradient(45deg, #17a2b8, #138496); }
+.card-bg-primary { background: linear-gradient(45deg, #0d6efd, #0b5ed7); }
+.card-bg-secondary{ background: linear-gradient(45deg, #6c757d, #5a6268); }
+.card-bg-dark    { background: linear-gradient(45deg, #343a40, #23272b); }
+
+
+/* So'nggi Buyurtmalar Jadvali */
+.table thead th {
+    font-weight: 600;
+    color: #6c757d;
+    text-transform: uppercase;
+    font-size: 12px;
+    border-bottom: 2px solid #dee2e6;
+}
+
+/* Status Badge (takroriy, global bo'lishi mumkin) */
+.status-badge {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+    text-transform: capitalize;
+}
+.status-kutilmoqda { background-color: #ffc107; color: #212529;}
+.status-to\'lov-tekshirilmoqda { background-color: #fd7e14;}
+.status-tasdiqlandi { background-color: #17a2b8; }
+.status-yetkazilmoqda { background-color: #6610f2; }
+.status-yetkazildi { background-color: #28a745; }
+.status-bekor-qilindi { background-color: #dc3545; }
+
+
+/* Tezkor Harakatlar */
+.list-group-item-action {
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+.list-group-item-action:hover {
+    background-color: #f8f9fa;
+    transform: translateX(5px);
+    color: #0d6efd;
+}

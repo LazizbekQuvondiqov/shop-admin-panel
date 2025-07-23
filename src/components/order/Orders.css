@@ -1,0 +1,199 @@
+src/components/order/Orders.css
+
+.page-container { padding: 24px; background-color: #f8f9fa; }
+.page-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+.page-header h1 { font-size: 28px; font-weight: 700; }
+.page-stats .badge { margin-left: 8px; font-size: 14px; }
+.controls-card { padding: 16px; display: flex; flex-direction: column; gap: 16px; background-color: #fff; }
+@media (min-width: 768px) {
+  .controls-card { flex-direction: row; align-items: center; flex-wrap: wrap; }
+}
+.search-box { position: relative; flex-grow: 1; min-width: 300px; }
+.search-box .fa-search { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #6c757d; }
+.search-box input { padding-left: 40px; padding: 10px 15px; border-radius: 8px; border: 1px solid #ced4da; font-size: 16px; transition: all 0.2s; width: 100%; }
+.filter-controls { display: flex; flex-direction: column; gap: 12px; }
+@media (min-width: 768px) {
+  .filter-controls { flex-direction: row; gap: 16px; }
+}
+.search-box input:focus, .filter-controls select:focus { border-color: #86b7fe; box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25); outline: none; }
+.filter-controls select { padding: 10px 15px; border-radius: 8px; border: 1px solid #ced4da; font-size: 16px; transition: all 0.2s; }
+.table-responsive { overflow-x: auto; }
+.table { width: 100%; min-width: 950px; border-collapse: separate; border-spacing: 0; }
+.table thead th { background-color: #f8f9fa; font-weight: 600; color: #495057; text-transform: uppercase; font-size: 12px; padding: 12px 16px; border-bottom: 2px solid #dee2e6; text-align: left; }
+.table tbody tr { transition: background-color 0.2s; }
+.table tbody tr:hover { background-color: #f1f3f5; }
+.table td { padding: 16px; vertical-align: middle; border-bottom: 1px solid #e9ecef; }
+.customer-info .customer-name { font-weight: 600; }
+.customer-info .customer-phone, .customer-info .customer-id { color: #6c757d; font-size: 14px; }
+.order-items-list { list-style: none; padding: 0; margin: 0; font-size: 14px; }
+.amount { font-weight: 700; color: #198754; }
+.order-time { font-size: 13px; color: #6c757d; }
+.action-buttons { display: flex; gap: 10px; justify-content: center; }
+.btn-action { background: #f1f3f5; border: 1px solid #dee2e6; color: #495057; width: 38px; height: 38px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+.btn-action:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.1); color: white; border-color: transparent; }
+.btn-action.btn-delete:hover { background-color: #dc3545; }
+.btn-action:not(.btn-delete):hover { background-color: #0d6efd; }
+.btn-action:disabled { background: #e9ecef; cursor: not-allowed; color: #adb5bd; transform: none; box-shadow: none; }
+tr.highlighted { animation: highlight-fade 4s ease-out forwards; }
+@keyframes highlight-fade { from { background-color: #d1e7fd; } to { background-color: transparent; } }
+
+/* === CUSTOM SELECT STILLARI (MUHIM O'ZGARISH) === */
+.status-container { position: relative; display: inline-block; }
+.status-select-custom {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    padding: 8px 30px 8px 16px;
+    border-radius: 20px;
+    color: white;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.7rem center;
+    background-size: 12px 12px;
+}
+.status-select-custom:focus { outline: 2px solid rgba(13, 110, 253, 0.5); outline-offset: 2px; }
+
+/* Har bir status uchun ranglar */
+.status-tasdiqlandi { background-color: #0d6efd; }
+.status-yetkazildi { background-color: #198754; }
+.status-bekor-qilindi { background-color: #dc3545; }
+/* src/components/order/Orders.css faylining oxiriga qo'shing */
+
+.order-items-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.quantity-input {
+    width: 60px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    border: 1px solid #ced4da;
+    text-align: center;
+    font-weight: 600;
+}
+
+.btn-save-quantity {
+    background-color: #198754; /* Yashil */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Mavjud stillarga qo'shimcha yoki yangi faylga */
+
+.status-badge-button {
+    border: none;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: white;
+    min-width: 120px;
+    text-align: center;
+}
+
+.status-badge-button:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* Holatlarga qarab ranglar */
+.status-yangi { background-color: #6c757d; }
+.status-to-lov-tekshirilmoqda { background-color: #ffc107; color: #212529; }
+.status-tasdiqlandi { background-color: #17a2b8; }
+.status-yetkazildi { background-color: #28a745; }
+.status-bekor-qilindi { background-color: #dc3545; }
+
+
+/* Modal oyna uchun stillar */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1050;
+    backdrop-filter: blur(3px);
+}
+
+.status-modal {
+    background: #fff;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    animation: slide-down 0.3s ease-out;
+}
+
+.status-modal .modal-header {
+    padding: 1rem;
+    border-bottom: 1px solid #dee2e6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.status-modal .modal-header h5 {
+    margin-bottom: 0;
+    font-weight: 600;
+}
+
+.status-modal .modal-body {
+    padding: 1rem;
+}
+
+.status-modal .modal-footer {
+    padding: 1rem;
+    border-top: 1px solid #dee2e6;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+@keyframes slide-down {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.order-item-image-small{
+  width: 50px;
+  height: 50px;
+}
+
+
+
+
+
+
+
+
+

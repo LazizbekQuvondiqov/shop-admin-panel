@@ -1,0 +1,135 @@
+/* Orqa fon (Backdrop) */
+.map-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(17, 24, 39, 0.7); /* Professional quyuq fon */
+    backdrop-filter: blur(4px); /* Orqa fonni xiralashtirish effekti */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1050;
+    padding: 1rem;
+    animation: fadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Modalning asosiy konteyneri (Oyna) */
+.map-modal-content {
+    background-color: #ffffff;
+    border-radius: 12px; /* Yumshoqroq burchaklar */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+    /* --- ASOSIY O'LCHAM SOZLAMALARI --- */
+    width:40%;
+    height: 90%;
+
+    /* Maksimal o'lchamlar (juda katta ekranlar uchun) */
+    max-width: 1400px;
+
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Ichidagi elementlar chiqib ketmasligi uchun */
+    animation: slideInUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Modal sarlavhasi (Header) */
+.map-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+    background-color: #f9fafb;
+    flex-shrink: 0; /* Bu qism siqilmasin */
+}
+
+.map-modal-title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #111827; /* To'qroq rang */
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* Yopish tugmasi */
+.map-modal-close-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1;
+    color: #6b7280;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.map-modal-close-btn:hover {
+    background-color: #e5e7eb;
+    transform: rotate(90deg);
+}
+
+/* Modal tanasi (Xarita joylashadigan joy) */
+.map-modal-body {
+    flex-grow: 1; /* Mavjud bo'sh joyni to'liq egallaydi */
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    background-color: #e5e7eb; /* Xarita yuklangunicha ko'rinadigan fon */
+}
+
+/* TaxiMap komponenti modal ichida to'g'ri ishlashi uchun */
+.map-modal-body .taxi-map-container {
+    height: 100%;
+    width: 100%;
+    border-left: none; /* Modal ichida chap chegara kerak emas */
+}
+
+/* Kichik ekranlar uchun moslashtirish (media query) */
+@media (max-width: 768px) {
+    .map-modal-backdrop {
+        padding: 0;
+    }
+
+    .map-modal-content {
+        width: 80%;
+        height: 70%;
+        max-width: 100%;
+        border-radius: 0;
+    }
+
+    .map-modal-header {
+        padding: 0.75rem 1rem;
+    }
+
+    .map-modal-title {
+        font-size: 1.1rem;
+    }
+}

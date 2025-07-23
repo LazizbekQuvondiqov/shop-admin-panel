@@ -1,0 +1,303 @@
+/* Pagination Container */
+.pagination-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background: #fff;
+    border-top: 1px solid #e9ecef;
+    border-radius: 0 0 8px 8px;
+}
+
+/* Ma'lumot va sahifa o'lchamini tanlash */
+.pagination-info-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.pagination-info {
+    color: #6c757d;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.pagination-info-text {
+    padding: 8px 12px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    border: 1px solid #e9ecef;
+}
+
+.pagination-size-selector {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pagination-size-label {
+    color: #495057;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.pagination-size-select {
+    padding: 6px 10px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    background: #fff;
+    color: #495057;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.pagination-size-select:hover {
+    border-color: #0d6efd;
+}
+
+.pagination-size-select:focus {
+    outline: none;
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.25);
+}
+
+/* Pagination boshqaruv tugmalari */
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.pagination-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border: 1px solid #dee2e6;
+    background: #fff;
+    color: #6c757d;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.pagination-btn:hover:not(:disabled) {
+    background: #e9ecef;
+    border-color: #adb5bd;
+    color: #495057;
+}
+
+.pagination-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: #f8f9fa;
+}
+
+.pagination-btn-icon {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.pagination-btn-text {
+    display: none;
+}
+
+/* Sahifa raqamlari */
+.pagination-pages {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.pagination-page {
+    min-width: 40px;
+    height: 40px;
+    padding: 8px;
+    border: 1px solid #dee2e6;
+    background: #fff;
+    color: #6c757d;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination-page:hover:not(:disabled):not(.pagination-page-active) {
+    background: #e9ecef;
+    border-color: #adb5bd;
+    color: #495057;
+}
+
+.pagination-page-active {
+    background: #0d6efd;
+    border-color: #0d6efd;
+    color: #fff;
+    cursor: default;
+}
+
+.pagination-page-dots {
+    border: none;
+    background: transparent;
+    color: #6c757d;
+    cursor: default;
+    font-weight: bold;
+}
+
+.pagination-page-dots:hover {
+    background: transparent;
+    border: none;
+}
+
+/* Sahifa navigatsiyasi */
+.pagination-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.pagination-nav-text {
+    color: #6c757d;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 12px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    border: 1px solid #e9ecef;
+}
+
+.pagination-jump {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pagination-jump-label {
+    color: #495057;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.pagination-jump-input {
+    width: 70px;
+    padding: 6px 10px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    background: #fff;
+    color: #495057;
+    font-size: 14px;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.pagination-jump-input:hover {
+    border-color: #0d6efd;
+}
+
+.pagination-jump-input:focus {
+    outline: none;
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.25);
+}
+
+/* Responsive dizayn */
+@media (max-width: 768px) {
+    .pagination-container {
+        padding: 15px;
+        gap: 12px;
+    }
+
+    .pagination-info-section {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .pagination-info {
+        text-align: center;
+    }
+
+    .pagination-size-selector {
+        justify-content: center;
+    }
+
+    .pagination-controls {
+        justify-content: center;
+        gap: 6px;
+    }
+
+    .pagination-btn-text {
+        display: inline;
+    }
+
+    .pagination-page {
+        min-width: 36px;
+        height: 36px;
+        font-size: 13px;
+    }
+
+    .pagination-navigation {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .pagination-container {
+        padding: 12px;
+    }
+
+    .pagination-pages {
+        gap: 2px;
+    }
+
+    .pagination-page {
+        min-width: 32px;
+        height: 32px;
+        font-size: 12px;
+        padding: 4px;
+    }
+
+    .pagination-btn {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+
+    .pagination-btn-icon {
+        font-size: 14px;
+    }
+}
+
+/* Qo'shimcha animatsiyalar */
+.pagination-page-active {
+    animation: activePage 0.2s ease;
+}
+
+@keyframes activePage {
+    0% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.pagination-btn:active:not(:disabled) {
+    transform: scale(0.98);
+}

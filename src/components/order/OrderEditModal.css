@@ -1,0 +1,85 @@
+/* frontend/src/components/order/OrderEditModal.css */
+
+.order-edit-modal {
+    background: white;
+    padding: 0;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px; /* Modalni kattaroq qilamiz */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.order-edit-modal .modal-body {
+    padding: 1rem;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.order-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #eee;
+    border-radius: 6px;
+}
+
+.item-name {
+    flex-grow: 1;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.item-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.item-quantity {
+    width: 70px;
+    text-align: center;
+    padding: 0.375rem 0.5rem;
+}
+
+.item-price {
+    color: #6c757d;
+    white-space: nowrap;
+}
+
+.item-remove-btn {
+    padding: 0.375rem 0.75rem;
+}
+
+.add-item-section {
+    margin-top: 1rem;
+}
+
+.add-item-section h6 {
+    margin-bottom: 0.5rem;
+}
+
+.order-edit-modal .modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-top: 1px solid #dee2e6;
+    background-color: #f8f9fa;
+}
+
+.total-sum {
+    font-size: 1.1rem;
+}
