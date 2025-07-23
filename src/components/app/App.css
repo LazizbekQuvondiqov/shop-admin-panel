@@ -2,8 +2,7 @@
 
 .app {
   display: flex;
-  /* Sidebar o'zgarmas (fixed) bo'lgani uchun bu yerda flex kerak emas,
-     lekin kelajakda kerak bo'lishi mumkin */
+
 }
 
 /* <<< ENG MUHIM O'ZGARISH >>> */
